@@ -14,7 +14,8 @@ const ChallengesSection = () => {
       difficulty: "Dễ",
       timeLimit: "30 ngày",
       category: "Sức khỏe",
-      icon: <Target className="h-6 w-6" />
+      icon: <Target className="h-6 w-6" />,
+      featured: false
     },
     {
       id: 2,
@@ -25,7 +26,8 @@ const ChallengesSection = () => {
       difficulty: "Trung bình",
       timeLimit: "2 tuần",
       category: "Giáo dục",
-      icon: <Star className="h-6 w-6" />
+      icon: <Star className="h-6 w-6" />,
+      featured: true
     },
     {
       id: 3,
@@ -36,7 +38,8 @@ const ChallengesSection = () => {
       difficulty: "Dễ",
       timeLimit: "1 tuần",
       category: "Môi trường",
-      icon: <Trophy className="h-6 w-6" />
+      icon: <Trophy className="h-6 w-6" />,
+      featured: false
     }
   ];
 
@@ -62,41 +65,49 @@ const ChallengesSection = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
           {challenges.map((challenge) => (
-            <Card key={challenge.id} className="overflow-hidden shadow-card hover:shadow-glow transition-all duration-300 group border-l-4 border-l-primary">
-              <CardHeader className="pb-4">
-                <div className="flex items-start justify-between">
-                  <div className="flex items-center gap-3">
+            <Card key={challenge.id} className={`overflow-hidden shadow-card hover:shadow-glow transition-all duration-300 group h-full flex flex-col ${challenge.featured ? 'relative' : ''}`}>
+              {challenge.featured && (
+                <div className="absolute top-0 left-0 right-0 bg-gradient-hero text-white text-center py-2 text-sm font-medium rounded-t-lg">
+                  <Star className="h-4 w-4 inline mr-1" />
+                  Nổi bật
+                </div>
+              )}
+              
+              <CardHeader className={`pb-4 ${challenge.featured ? 'mt-10' : ''}`}>
+                <div className="flex items-start justify-between mb-3">
+                  <div className="flex items-center gap-2">
                     <div className="p-2 bg-primary-light rounded-lg text-primary">
                       {challenge.icon}
                     </div>
-                    <div>
-                      <Badge variant="secondary" className="mb-2">
-                        {challenge.category}
-                      </Badge>
-                      <CardTitle className="text-lg line-clamp-2">
-                        {challenge.title}
-                      </CardTitle>
-                    </div>
+                    <Badge variant="secondary" className="text-xs">
+                      {challenge.category}
+                    </Badge>
+                  </div>
+                  <div className="flex items-center gap-1 text-xs text-muted-foreground">
+                    <Calendar className="h-3 w-3" />
+                    {challenge.timeLimit}
                   </div>
                 </div>
-              </CardHeader>
-              
-              <CardContent className="space-y-4">
-                <CardDescription className="line-clamp-3">
+                <CardTitle className="text-lg leading-tight h-12 flex items-start">
+                  {challenge.title}
+                </CardTitle>
+                <CardDescription className="text-sm leading-relaxed h-16 flex items-start">
                   {challenge.description}
                 </CardDescription>
-
-                <div className="space-y-3">
+              </CardHeader>
+              
+              <CardContent className="flex-1 flex flex-col justify-between pb-4">
+                <div className="space-y-3 mb-4">
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-muted-foreground">Phần thưởng:</span>
-                    <span className="font-semibold text-primary">{challenge.reward}</span>
+                    <span className="font-bold text-primary text-lg">{challenge.reward}</span>
                   </div>
                   
                   <div className="flex items-center justify-between">
                     <span className="text-sm text-muted-foreground">Người tham gia:</span>
-                    <span className="font-medium">{challenge.participants.toLocaleString()}</span>
+                    <span className="font-semibold">{challenge.participants.toLocaleString()}</span>
                   </div>
 
                   <div className="flex items-center justify-between">
@@ -115,7 +126,7 @@ const ChallengesSection = () => {
                   </div>
                 </div>
 
-                <Button className="w-full mt-4 group-hover:bg-primary/90">
+                <Button className="w-full">
                   Tham gia thách thức
                 </Button>
               </CardContent>
@@ -124,7 +135,7 @@ const ChallengesSection = () => {
         </div>
 
         <div className="text-center">
-          <Button variant="outline" size="lg">
+          <Button size="lg" className="bg-primary hover:bg-primary/90">
             Khám phá thêm thách thức
           </Button>
         </div>

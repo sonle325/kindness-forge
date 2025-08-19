@@ -23,7 +23,7 @@ const Navigation = () => {
             <a href="#auction" className="text-foreground hover:text-primary transition-colors">
               Đấu giá kĩ năng
             </a>
-            <a href="#ai-chat" className="text-foreground hover:text-primary transition-colors">
+            <a href="/ai-chat" className="text-foreground hover:text-primary transition-colors">
               AI Chat
             </a>
           </div>

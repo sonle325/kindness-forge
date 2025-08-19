@@ -118,7 +118,7 @@ const CampaignsSection = () => {
         </div>
 
         <div className="text-center">
-          <Button variant="outline" size="lg">
+          <Button size="lg" className="bg-primary hover:bg-primary/90">
             Xem tất cả chiến dịch
           </Button>
         </div>
