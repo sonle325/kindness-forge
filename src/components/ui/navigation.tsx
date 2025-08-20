@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Heart, Users, Award, MessageCircle, QrCode } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navigation = () => {
   return (
@@ -29,8 +30,12 @@ const Navigation = () => {
           </div>
 
           <div className="flex items-center space-x-4">
-            <Button variant="outline">Đăng nhập</Button>
-            <Button variant="default">Đăng ký</Button>
+            <Link to="/login">
+              <Button variant="outline">Đăng nhập</Button>
+            </Link>
+            <Link to="/register">
+              <Button variant="default">Đăng ký</Button>
+            </Link>
           </div>
         </div>
       </div>

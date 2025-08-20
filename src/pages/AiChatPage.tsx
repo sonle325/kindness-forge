@@ -88,15 +88,15 @@ const AiChatPage = () => {
                 </CardHeader>
                 <CardContent className="space-y-2">
                   {suggestedQuestions.map((question, index) => (
-                    <Button
-                      key={index}
-                      variant="ghost"
-                      className="w-full text-left justify-start h-auto p-3 text-sm"
-                      onClick={() => handleQuestionClick(question)}
-                    >
-                      <HelpCircle className="h-4 w-4 mr-2 text-primary flex-shrink-0" />
-                      {question}
-                    </Button>
+                     <Button
+                       key={index}
+                       variant="ghost"
+                       className="w-full text-left justify-start h-auto p-3 text-sm whitespace-normal"
+                       onClick={() => handleQuestionClick(question)}
+                     >
+                       <HelpCircle className="h-4 w-4 mr-2 text-primary flex-shrink-0 mt-0.5" />
+                       <span className="break-words">{question}</span>
+                     </Button>
                   ))}
                 </CardContent>
               </Card>
@@ -151,19 +151,19 @@ const AiChatPage = () => {
                         }`}>
                           {message.type === "bot" ? <Bot className="h-4 w-4" /> : <User className="h-4 w-4" />}
                         </div>
-                        <div className={`max-w-xs lg:max-w-md p-3 rounded-lg ${
-                          message.type === "bot"
-                            ? "bg-muted text-foreground"
-                            : "bg-primary text-primary-foreground"
-                        }`}>
-                          <p className="text-sm">{message.content}</p>
-                          <span className="text-xs opacity-70 mt-1 block">
-                            {message.timestamp.toLocaleTimeString('vi-VN', { 
-                              hour: '2-digit', 
-                              minute: '2-digit' 
-                            })}
-                          </span>
-                        </div>
+                         <div className={`max-w-xs lg:max-w-md xl:max-w-lg p-3 rounded-lg ${
+                           message.type === "bot"
+                             ? "bg-muted text-foreground"
+                             : "bg-primary text-primary-foreground"
+                         }`}>
+                           <p className="text-sm leading-relaxed break-words">{message.content}</p>
+                           <span className="text-xs opacity-70 mt-2 block">
+                             {message.timestamp.toLocaleTimeString('vi-VN', { 
+                               hour: '2-digit', 
+                               minute: '2-digit' 
+                             })}
+                           </span>
+                         </div>
                       </div>
                     ))}
                   </div>
