@@ -3,6 +3,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Clock, Gavel, Star, TrendingUp } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const AuctionSection = () => {
   const auctions = [
@@ -139,13 +140,17 @@ const AuctionSection = () => {
                 </div>
 
                 <div className="flex gap-2 pt-2">
-                  <Button variant="outline" className="flex-1">
-                    Xem chi tiết
-                  </Button>
-                  <Button className="flex-1">
-                    <Gavel className="h-4 w-4 mr-2" />
-                    Đấu giá
-                  </Button>
+                  <Link to="/auction" className="flex-1">
+                    <Button variant="outline" className="w-full">
+                      Xem chi tiết
+                    </Button>
+                  </Link>
+                  <Link to="/auction" className="flex-1">
+                    <Button className="w-full">
+                      <Gavel className="h-4 w-4 mr-2" />
+                      Đấu giá
+                    </Button>
+                  </Link>
                 </div>
               </CardContent>
             </Card>
@@ -153,9 +158,11 @@ const AuctionSection = () => {
         </div>
 
         <div className="text-center">
-          <Button size="lg" className="bg-primary hover:bg-primary/90">
-            Xem tất cả đấu giá
-          </Button>
+          <Link to="/auction">
+            <Button size="lg" className="bg-primary hover:bg-primary/90">
+              Xem tất cả đấu giá
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

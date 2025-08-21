@@ -9,6 +9,8 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import CampaignsPage from "./pages/CampaignsPage";
 import CampaignDetailPage from "./pages/CampaignDetailPage";
+import AuctionPage from "./pages/AuctionPage";
+import AuctionDetailPage from "./pages/AuctionDetailPage";
 import ChallengeDetailPage from "./pages/ChallengeDetailPage";
 import NotFound from "./pages/NotFound";
 
@@ -27,6 +29,8 @@ const App = () => (
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/campaigns" element={<CampaignsPage />} />
           <Route path="/campaigns/:id" element={<CampaignDetailPage />} />
+          <Route path="/auction" element={<AuctionPage />} />
+          <Route path="/auction/:id" element={<AuctionDetailPage />} />
           <Route path="/challenges/:id" element={<ChallengeDetailPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
