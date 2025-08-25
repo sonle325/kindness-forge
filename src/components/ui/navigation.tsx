@@ -27,6 +27,12 @@ const Navigation = () => {
             <a href="/ai-chat" className="text-foreground hover:text-primary transition-colors">
               AI Chat
             </a>
+            <Link to="/create-campaign" className="text-foreground hover:text-primary transition-colors">
+              Tạo chiến dịch
+            </Link>
+            <Link to="/create-challenge" className="text-foreground hover:text-primary transition-colors">
+              Tạo thử thách
+            </Link>
           </div>
 
           <div className="flex items-center space-x-4">

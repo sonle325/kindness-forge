@@ -9,6 +9,8 @@ import LoginPage from "./pages/LoginPage";
 import RegisterPage from "./pages/RegisterPage";
 import CampaignsPage from "./pages/CampaignsPage";
 import CampaignDetailPage from "./pages/CampaignDetailPage";
+import CreateCampaignPage from "./pages/CreateCampaignPage";
+import CreateChallengePage from "./pages/CreateChallengePage";
 import AuctionPage from "./pages/AuctionPage";
 import AuctionDetailPage from "./pages/AuctionDetailPage";
 import ChallengeDetailPage from "./pages/ChallengeDetailPage";
@@ -29,6 +31,8 @@ const App = () => (
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/campaigns" element={<CampaignsPage />} />
           <Route path="/campaigns/:id" element={<CampaignDetailPage />} />
+          <Route path="/create-campaign" element={<CreateCampaignPage />} />
+          <Route path="/create-challenge" element={<CreateChallengePage />} />
           <Route path="/auction" element={<AuctionPage />} />
           <Route path="/auction/:id" element={<AuctionDetailPage />} />
           <Route path="/challenges/:id" element={<ChallengeDetailPage />} />
