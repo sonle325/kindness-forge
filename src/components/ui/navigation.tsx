@@ -33,6 +33,9 @@ const Navigation = () => {
             <Link to="/create-challenge" className="text-foreground hover:text-primary transition-colors">
               Tạo thử thách
             </Link>
+            <Link to="/create-auction" className="text-foreground hover:text-primary transition-colors">
+              Tạo đấu giá
+            </Link>
           </div>
 
           <div className="flex items-center space-x-4">

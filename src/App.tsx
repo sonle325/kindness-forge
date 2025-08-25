@@ -11,6 +11,7 @@ import CampaignsPage from "./pages/CampaignsPage";
 import CampaignDetailPage from "./pages/CampaignDetailPage";
 import CreateCampaignPage from "./pages/CreateCampaignPage";
 import CreateChallengePage from "./pages/CreateChallengePage";
+import CreateAuctionPage from "./pages/CreateAuctionPage";
 import AuctionPage from "./pages/AuctionPage";
 import AuctionDetailPage from "./pages/AuctionDetailPage";
 import ChallengeDetailPage from "./pages/ChallengeDetailPage";
@@ -33,6 +34,7 @@ const App = () => (
           <Route path="/campaigns/:id" element={<CampaignDetailPage />} />
           <Route path="/create-campaign" element={<CreateCampaignPage />} />
           <Route path="/create-challenge" element={<CreateChallengePage />} />
+          <Route path="/create-auction" element={<CreateAuctionPage />} />
           <Route path="/auction" element={<AuctionPage />} />
           <Route path="/auction/:id" element={<AuctionDetailPage />} />
           <Route path="/challenges/:id" element={<ChallengeDetailPage />} />
