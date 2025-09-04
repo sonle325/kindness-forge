@@ -15,6 +15,8 @@ import CreateAuctionPage from "./pages/CreateAuctionPage";
 import AuctionPage from "./pages/AuctionPage";
 import AuctionDetailPage from "./pages/AuctionDetailPage";
 import ChallengeDetailPage from "./pages/ChallengeDetailPage";
+import PaymentPage from "./pages/PaymentPage";
+import PaymentSuccessPage from "./pages/PaymentSuccessPage";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -38,6 +40,8 @@ const App = () => (
           <Route path="/auction" element={<AuctionPage />} />
           <Route path="/auction/:id" element={<AuctionDetailPage />} />
           <Route path="/challenges/:id" element={<ChallengeDetailPage />} />
+          <Route path="/payment/:id" element={<PaymentPage />} />
+          <Route path="/payment-success" element={<PaymentSuccessPage />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

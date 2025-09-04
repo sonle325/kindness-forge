@@ -112,7 +112,7 @@ const CampaignsSection = () => {
                   </Link>
                 </Button>
                 <Button className="flex-1" size="sm" asChild>
-                  <Link to={`/campaigns/${campaign.id}`}>
+                  <Link to={`/payment/${campaign.id}`}>
                     <Heart className="h-4 w-4 mr-1" />
                     Ủng hộ
                   </Link>
