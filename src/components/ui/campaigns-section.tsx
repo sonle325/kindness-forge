@@ -2,6 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Heart, Clock, Users } from "lucide-react";
+import { Link } from "react-router-dom";
 import campaignSchool from "@/assets/campaign-school.jpg";
 import campaignFlood from "@/assets/campaign-flood.jpg";
 import campaignElderly from "@/assets/campaign-elderly.jpg";
@@ -105,12 +106,16 @@ const CampaignsSection = () => {
               </CardContent>
               
               <CardFooter className="gap-3 pt-0">
-                <Button className="flex-1" variant="outline" size="sm">
-                  Xem chi tiết
+                <Button className="flex-1" variant="outline" size="sm" asChild>
+                  <Link to={`/campaigns/${campaign.id}`}>
+                    Xem chi tiết
+                  </Link>
                 </Button>
-                <Button className="flex-1" size="sm">
-                  <Heart className="h-4 w-4 mr-1" />
-                  Ủng hộ
+                <Button className="flex-1" size="sm" asChild>
+                  <Link to={`/campaigns/${campaign.id}`}>
+                    <Heart className="h-4 w-4 mr-1" />
+                    Ủng hộ
+                  </Link>
                 </Button>
               </CardFooter>
             </Card>
@@ -118,8 +123,10 @@ const CampaignsSection = () => {
         </div>
 
         <div className="text-center">
-          <Button size="lg" className="bg-primary hover:bg-primary/90">
-            Xem tất cả chiến dịch
+          <Button size="lg" className="bg-primary hover:bg-primary/90" asChild>
+            <Link to="/campaigns">
+              Xem tất cả chiến dịch
+            </Link>
           </Button>
         </div>
       </div>
