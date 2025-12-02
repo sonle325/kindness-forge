@@ -12,6 +12,7 @@ import RegisterPage from "./pages/RegisterPage";
 import CampaignsPage from "./pages/CampaignsPage";
 import CampaignDetailPage from "./pages/CampaignDetailPage";
 import CreateCampaignPage from "./pages/CreateCampaignPage";
+import ChallengesPage from "./pages/ChallengesPage";
 import CreateChallengePage from "./pages/CreateChallengePage";
 import CreateAuctionPage from "./pages/CreateAuctionPage";
 import AuctionPage from "./pages/AuctionPage";
@@ -38,6 +39,7 @@ const App = () => (
           <Route path="/campaigns" element={<CampaignsPage />} />
           <Route path="/campaigns/:id" element={<CampaignDetailPage />} />
           <Route path="/create-campaign" element={<CreateCampaignPage />} />
+          <Route path="/challenges" element={<ChallengesPage />} />
           <Route path="/create-challenge" element={<CreateChallengePage />} />
           <Route path="/create-auction" element={<CreateAuctionPage />} />
           <Route path="/auction" element={<AuctionPage />} />

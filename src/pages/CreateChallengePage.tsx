@@ -1,4 +1,7 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useAppDispatch } from "@/store/hooks";
+import { addChallenge } from "@/store/slices/challengesSlice";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -14,6 +17,8 @@ import Navigation from "@/components/ui/navigation";
 import { toast } from "sonner";
 
 const CreateChallengePage = () => {
+  const navigate = useNavigate();
+  const dispatch = useAppDispatch();
   const [formData, setFormData] = useState({
     title: "",
     description: "",
@@ -59,8 +64,20 @@ const CreateChallengePage = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    const newChallenge = {
+      id: Date.now().toString(),
+      title: formData.title,
+      description: formData.description,
+      reward: parseFloat(formData.reward),
+      difficulty: formData.difficulty,
+      category: formData.category,
+      endDate: endDate?.toISOString(),
+      tasks: tasks.filter(task => task.trim() !== "")
+    };
+    
+    dispatch(addChallenge(newChallenge));
     toast.success("Thử thách đã được tạo thành công!");
-    console.log("Challenge data:", { ...formData, endDate, tasks: tasks.filter(t => t.trim()) });
+    navigate("/challenges");
   };
 
   return (
